@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         webView = findViewById(R.id.webview);
         name = findViewById(R.id.name);
         initWebView();
+
     }
 
     public class MyBrad {
