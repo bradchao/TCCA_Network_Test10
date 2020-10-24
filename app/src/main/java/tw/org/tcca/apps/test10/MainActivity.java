@@ -1,6 +1,7 @@
 package tw.org.tcca.apps.test10;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
@@ -63,7 +64,16 @@ public class MainActivity extends AppCompatActivity {
 
     private void gotoScan(){
         Intent intent = new Intent(this, ScanActivity.class);
-        startActivity(intent);
+        startActivityForResult(intent, 111);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 111 && resultCode == RESULT_OK){
+            String code = data.getStringExtra("code");
+            webView.loadUrl("javascript:showCode('" + code + "')");
+        }
     }
 
     private void initWebView(){
