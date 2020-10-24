@@ -7,9 +7,11 @@ import android.util.Log;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private WebView webView;
+    private TextView name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,13 +19,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         webView = findViewById(R.id.webview);
+        name = findViewById(R.id.name);
         initWebView();
     }
 
     public class MyBrad {
         @JavascriptInterface
-        public void test2(){
-            Log.v("bradlog", "OK");
+        public void startScan(){
         }
     }
 

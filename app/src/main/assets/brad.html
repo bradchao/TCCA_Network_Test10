@@ -1,10 +1,10 @@
 <script>
-    function test1(){
-        var name = document.getElementById('name');
-        document.getElementById('here').innerHTML = name.value;
-        brad.test2();
+    function camera(){
+        brad.startScan();
+    }
+    function showCode(scancode){
+        document.getElementById('code').innerHTML = scancode;
     }
 </script>
-<input type="text" id="name" />
-<input type="button" value="Send" onclick="test1()" /><hr />
-<div id="here"></div>
+<input type="text" id="code" />
+<input type="button" value="Camera" onclick="camera()" /><hr />
