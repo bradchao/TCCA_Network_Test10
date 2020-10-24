@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
@@ -55,9 +56,14 @@ public class MainActivity extends AppCompatActivity {
         @JavascriptInterface
         public void startScan(){
             if (isCamera){
-                
+                gotoScan();
             }
         }
+    }
+
+    private void gotoScan(){
+        Intent intent = new Intent(this, ScanActivity.class);
+        startActivity(intent);
     }
 
     private void initWebView(){
