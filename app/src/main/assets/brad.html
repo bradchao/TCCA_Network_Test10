@@ -1,0 +1,9 @@
+<script>
+    function test1(){
+        var name = document.getElementById('name');
+        document.getElementById('here').innerHTML = name.value;
+    }
+</script>
+<input type="text" id="name" />
+<input type="button" value="Send" onclick="test1()" /><hr />
+<div id="here"></div>
